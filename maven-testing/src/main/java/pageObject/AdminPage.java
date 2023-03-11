@@ -4,6 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+/**
+ * This page object contain all the functionality regarding the administration page
+ * @author mpinar
+ *
+ */
 public class AdminPage {
 	
 	@FindBy(how = How.XPATH, using = "//*[@id=\"admin\"]/table[2]/tbody/tr[2]/td[1]/label")
@@ -24,10 +29,19 @@ public class AdminPage {
 	@FindBy(how = How.XPATH, using = "//*[@id=\"admin\"]/table[1]/tbody/tr[3]/td[2]/span")
 	private WebElement btnCreateUser;
 
+	/**
+	 * Resets all user
+	 * @author mpinar
+	 */
 	public void resetUsers() {
 		btnResetUsers.click();
 	}
 	
+	/**
+	 * Creates a new user in the data
+	 * @param username the name of the user
+	 * @param password the password of the user
+	 */
 	public void createUser (String username, String password){
 		inputUsername.sendKeys(username);
 		inputPassword.sendKeys(password);

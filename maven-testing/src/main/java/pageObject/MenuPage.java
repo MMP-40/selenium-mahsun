@@ -4,6 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+/**
+ * this is about the menu options on top of the page
+ * @author mpinar
+ *
+ */
 public class MenuPage {
 	
 	@FindBy(how = How.XPATH, using = "//*[@id=\"main-nav\"]/ul/li[6]/a")
@@ -18,11 +23,17 @@ public class MenuPage {
 	@FindBy(how = How.ID, using = "crudConnection")
 	private WebElement btnNew;
 	
+	/**
+	 * clicks on the logout button
+	 */
 	public void clickLogout(){
 		System.out.println("Op de logout button klikken");
 		btnLogout.click();
 	}
 	
+	/**
+	 * clicks on the admin button
+	 */
 	public void clickAdmin(){
 		btnAdmin.click();
 	}
