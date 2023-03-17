@@ -4,6 +4,7 @@
 	<artifactId>maven-testing</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>maven-testing</name>
+	
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
@@ -41,12 +42,6 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M9</version>
 				<configuration>
-					<!--<systemPropertyVariables>
-							<ta.run.overwrite.settings>TRUE</ta.run.overwrite.settings>
-							<ta.run.platform>WEB</ta.run.platform>
-							<ta.run.step.takescreenshot>FALSE</ta.run.step.takescreenshot>
-							<buildDirectory></buildDirectory>
-						</systemPropertyVariables>-->
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
