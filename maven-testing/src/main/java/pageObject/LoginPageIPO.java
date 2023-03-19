@@ -1,13 +1,19 @@
 package pageObject;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import helper.DriverManager;
 
 public class LoginPageIPO {	
+	
 	@FindBy(how = How.ID, using = "username")
 	private WebElement fldUsername;
 	
@@ -25,71 +31,59 @@ public class LoginPageIPO {
 	
 	private WebDriver driver;
 	
-	public LoginPageIPO(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public LoginPageIPO() {
+		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
 	
 	public boolean isShown() {
-		return driver.getTitle().equals("Connection Manager");
+		if (driver.getTitle().equals("Connection Manager")) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
-	public LoginPageIPO switchToFrench() {
+	public WelcomePage logInWith (String userName, String passWord) {
+	    System.out.println("Logging in with: " + userName + "/" + passWord);
+	    System.out.println("Clearing username");
+		fldUsername.clear();
+	    System.out.println("Filling in username");
+		fldUsername.sendKeys(userName);
+	    System.out.println("Clearing password");
+		fldPassword.clear();
+	    System.out.println("Filling in password");
+		fldPassword.sendKeys(passWord);
+	    System.out.println("Clicking buttong");
+		btnLogin.click();
+
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return new WelcomePage();
+	}
+	
+	public WelcomePage loginWithAdmin () {
+		logInWith("admin", "superduper");
+		return new WelcomePage();
+	}
+	
+	public LoginPageIPO setLanguageTo(String language) {
+		System.out.println("Setting the language to: " + language);
 		Select selectLanguage = new Select(dropdownLanguage);
-		selectLanguage.selectByVisibleText("French");
+		selectLanguage.selectByVisibleText(language);
 		return this;
 	}
 	
-	public void login (String username, String password){
-		fldUsername.clear();
-		fldUsername.sendKeys(username);
-		fldPassword.sendKeys(password);
-		btnLogin.click();
+	public boolean isErrorShown() {
+		return errorMessage.isDisplayed();
 	}
-	
-//	public LoggedIn logIn(String username, String password) {
-//		fldUsername.clear();
-//		fldUsername.sendKeys(username);
-//		fldPassword.sendKeys(password);
-//		btnLogin.click()
-//		return new LoggedIn(driver);
-//	}
 	
 	public String getErrorMessage() {
-		return errorMessage.getText();		
+		return errorMessage.getText();
 	}
-}
-
-class LoggedIn {
-//	@FindBy(how = How.ID, using = "username")
-//	private WebElement fldUsername;
-//	
-//	@FindBy(how = How.ID, using = "password")
-//	private WebElement fldPassword;
-//	
-//	@FindBy(how = How.CLASS_NAME, using = "content")
-//	private WebElement btnLogin;
-//	
-//	private WebDriver driver;
-//	
-//	public LoggedIn(WebDriver driver) {
-//		this.driver = driver;
-//		PageFactory.initElements(driver, this);
-//	}
-//	
-//	public LoggedIn loggingIn() {
-//		fldUsername.clear();
-//		fldUsername.sendKeys();
-//		fldPassword.sendKeys();
-//		btnLogin.click();
-//		return this;
-//	}
-//	
-//	public void login (String username, String password){
-//		fldUsername.clear();
-//		fldUsername.sendKeys(username);
-//		fldPassword.sendKeys(password);
-//		btnLogin.click();
-//	}
-	
 }
