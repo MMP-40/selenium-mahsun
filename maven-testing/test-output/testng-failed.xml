@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Testng_ex12">
+      <class name="Exercise_IPO">
         <methods>
-          <include name="LoginWithCorrectUsernameCorrectPasswordTest"/>
-          <include name="setupTest"/>
-          <include name="logOutTest"/>
           <include name="closeDriverTest"/>
+          <include name="logOutTest"/>
+          <include name="logInWithCorrectUsernameAndPassword"/>
+          <include name="setupTest"/>
         </methods>
-      </class> <!-- Testng_ex12 -->
+      </class> <!-- Exercise_IPO -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
