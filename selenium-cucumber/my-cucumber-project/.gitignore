@@ -1,1 +1,4 @@
+# ignore any file in /bin and /.settings
+**/bin/*
+**/.settings/*
 /target/
