@@ -15,6 +15,9 @@ public class MenuPage {
 	@FindBy(how = How.ID, using = "logout")
 	private WebElement btnLogout;
 	
+	@FindBy(how = How.LINK_TEXT, using = "Stats")
+	private WebElement btnStats;
+	
 	@FindBy(how = How.ID, using = "crudConnection")
 	private WebElement btnNew;
 	
@@ -34,5 +37,12 @@ public class MenuPage {
 	
 	public void clickNotExist(){
 		btnNotExist.click();
-}
+	}
+	/**
+	 * Clicks on the stats button
+	 */
+	public void stats() {
+		System.out.println("click on Stats button");
+		btnStats.click();
+	}
 }

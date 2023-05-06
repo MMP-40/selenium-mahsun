@@ -2,28 +2,32 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-19T13:50:40 CET" name="Default suite" finished-at="2023-03-19T13:50:41 CET" duration-ms="1796">
+  <suite started-at="2023-03-20T21:20:45 CET" name="Default suite" finished-at="2023-03-20T21:20:47 CET" duration-ms="2305">
     <groups>
     </groups>
-    <test started-at="2023-03-19T13:50:40 CET" name="Default test" finished-at="2023-03-19T13:50:41 CET" duration-ms="1796">
-      <class name="Exercise_IPO">
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:Exercise_IPO@41e1455d]" started-at="2023-03-19T13:50:37 CET" name="setupTest" finished-at="2023-03-19T13:50:40 CET" duration-ms="2152" status="PASS">
+    <test started-at="2023-03-20T21:20:45 CET" name="Default test" finished-at="2023-03-20T21:20:47 CET" duration-ms="2305">
+      <class name="Exercise_CustomControl">
+        <test-method is-config="true" signature="beforeAllTests()[pri:0, instance:Exercise_CustomControl@55141def]" started-at="2023-03-20T21:20:42 CET" name="beforeAllTests" finished-at="2023-03-20T21:20:44 CET" duration-ms="2118" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeAllTests -->
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:Exercise_CustomControl@55141def]" started-at="2023-03-20T21:20:44 CET" name="setupTest" finished-at="2023-03-20T21:20:45 CET" depends-on-methods="AbstractTest.beforeAllTests" duration-ms="802" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method is-config="true" signature="logOutTest()[pri:0, instance:Exercise_IPO@41e1455d]" started-at="2023-03-19T13:50:40 CET" name="logOutTest" finished-at="2023-03-19T13:50:40 CET" duration-ms="92" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:Exercise_CustomControl@55141def]" started-at="2023-03-20T21:20:45 CET" name="logout" finished-at="2023-03-20T21:20:45 CET" duration-ms="95" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logOutTest -->
-        <test-method signature="logInWithCorrectUsernameAndPassword()[pri:0, instance:Exercise_IPO@41e1455d]" started-at="2023-03-19T13:50:40 CET" name="logInWithCorrectUsernameAndPassword" finished-at="2023-03-19T13:50:41 CET" duration-ms="1625" status="PASS">
+        </test-method> <!-- logout -->
+        <test-method signature="validCreation()[pri:0, instance:Exercise_CustomControl@55141def]" started-at="2023-03-20T21:20:45 CET" name="validCreation" finished-at="2023-03-20T21:20:47 CET" duration-ms="2134" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logInWithCorrectUsernameAndPassword -->
-        <test-method is-config="true" signature="closeDriverTest()[pri:0, instance:Exercise_IPO@41e1455d]" started-at="2023-03-19T13:50:41 CET" name="closeDriverTest" finished-at="2023-03-19T13:50:42 CET" duration-ms="386" status="PASS">
+        </test-method> <!-- validCreation -->
+        <test-method is-config="true" signature="afterAllTests()[pri:0, instance:Exercise_CustomControl@55141def]" started-at="2023-03-20T21:20:47 CET" name="afterAllTests" finished-at="2023-03-20T21:20:48 CET" duration-ms="270" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriverTest -->
-      </class> <!-- Exercise_IPO -->
+        </test-method> <!-- afterAllTests -->
+      </class> <!-- Exercise_CustomControl -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
