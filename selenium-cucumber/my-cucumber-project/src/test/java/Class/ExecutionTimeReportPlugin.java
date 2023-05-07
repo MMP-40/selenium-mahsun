@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import io.cucumber.plugin.ConcurrentEventListener;
 import io.cucumber.plugin.event.*;
