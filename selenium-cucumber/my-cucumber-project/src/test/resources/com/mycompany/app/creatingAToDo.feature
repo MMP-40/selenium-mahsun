@@ -21,5 +21,5 @@ Feature: Creating a todo
 
   Scenario: Create todo automation is fun
     Given I am on the todo page
-    When I add the task to the
-    Then I see the task in the todo list
+    When I add "Automation is fun" to the todo list
+    Then I see "Automation is fun" in the todo list
