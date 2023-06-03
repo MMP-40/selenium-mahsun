@@ -7,21 +7,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverManager {
 
-	private WebDriver driver;
+	private static WebDriver driver;
 	
-	public DriverManager() {
-		getDriver();
-	}
+	//public DriverManager() {
+	//	getDriver();
+	//}
 	
 	public WebDriver getDriver() {
 		if(driver == null) {
 			setChromeDriver();
 		}
-		//driver.get("https://todomvc.com/examples/vanillajs/");
 		return driver;
 	}
 	
-	public  void setChromeDriver() {
+	public static void setChromeDriver() {
 		killDriver();
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\mpinar\\Desktop\\chromedriver\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
@@ -30,17 +29,16 @@ public class DriverManager {
 		driver.manage().window().maximize();
 	}
 	
-	public void setFirefoxDriver() {
+	public static void setFirefoxDriver() {
 		killDriver();
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\mpinar\\Desktop\\geckodriver\\geckodriver.exe");
 		driver = new FirefoxDriver();
 	}
 	
-	public void killDriver() {
+	public static void killDriver() {
 		if(driver != null) {
 			driver.quit();
 			driver = null;
 		}
 	}
-	
 }

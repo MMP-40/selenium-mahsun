@@ -34,6 +34,7 @@ public class TodoPage {
 	
 	private WebDriver driver;
 	
+	
 	public TodoPage(WebDriver webDriver) {
 		this.driver = webDriver;
 		PageFactory.initElements(driver, this);

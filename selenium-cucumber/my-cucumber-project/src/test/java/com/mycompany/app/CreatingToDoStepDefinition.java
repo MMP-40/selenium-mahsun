@@ -12,7 +12,9 @@ import io.cucumber.java.en.When;
 
 public class CreatingToDoStepDefinition {
 	
+	private DriverManager dm;
 	private static TodoPage todoPage;
+	private String url = "https://todomvc.com/examples/vanillajs/";
 	//private static DriverManager dm;
 	//WebDriver driver = dm.getDriver();
 	
@@ -21,8 +23,8 @@ public class CreatingToDoStepDefinition {
 	public void i_am_on_the_todo_page() {
 	    // Write code here that turns the phrase above into concrete actions
 	    System.out.println("I am on the todo page");
-	    todoPage = new TodoPage(DriverManager.getDriver());
-	    DriverMangaer.getDriver.get("https://todomvc.com/examples/vanillajs/");
+	    todoPage = new TodoPage(dm.getDriver());
+	    dm.getDriver().get("https://todomvc.com/examples/vanillajs/");
 	    
 	}
 	
